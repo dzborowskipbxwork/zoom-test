@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">-->
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
     <title>Centered Green Div</title>
     <style>
-        *{touch-action: pan-x pan-y}
+        * {
+            touch-action: pan-x pan-y
+        }
+
         body {
             margin: 0;
             height: 100vh;
@@ -17,15 +20,21 @@
             /*touch-action: pan-x pan-y;*/
             /*touch-action: manipulation;*/
         }
+
         .green-box {
             width: 100px;
             height: 100px;
-            background-color: green;
-            /*background-color: red;*/
+            /*background-color: green;*/
+            background-color: red;
         }
     </style>
 </head>
 <body>
-    <div class="green-box"></div>
+<script>
+    document.addEventListener("dblclick", (event) => {
+        event.preventDefault();
+    });
+</script>
+<div class="green-box"></div>
 </body>
 </html>
