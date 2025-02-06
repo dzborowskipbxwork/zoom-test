@@ -36,13 +36,22 @@
     //     event.preventDefault();
     // });
 
+    window.isPageZoomed = false;
+    window.addEventListener('resize', () => {
+        checkZoomLevel();
+    });
+
+
+    function checkZoomLevel() {
+        window.isPageZoomed = isZoomed()
+    }
+
     function isZoomed() {
         const zoomLevel = window.innerWidth / document.documentElement.clientWidth;
         return zoomLevel !== 1;
     }
 
-
 </script>
-<div class="green-box" onclick="alert(isZoomed())"></div>
+<div class="green-box" onclick="alert(window.isPageZoomed)"></div>
 </body>
 </html>
