@@ -7,18 +7,17 @@
     <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
     <title>Centered Green Div</title>
     <style>
-        * {
-            /*touch-action: pan-x pan-y*/
-        }
-
         body {
             margin: 0;
+            touch-action: none;
+        }
+
+        .container {
             height: 100vh;
-            -webkit-flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            touch-action: none;
+            overflow: scroll;
         }
 
         .green-box {
@@ -66,7 +65,10 @@
         document.body.style.transform = scale;
     }
 </script>
-<div class="green-box"></div>
-<div class="black-box"></div>
+<div class="container">
+    <div class="green-box"></div>
+    <div class="black-box"></div>
+</div>
+
 </body>
 </html>
