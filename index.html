@@ -18,13 +18,13 @@
             justify-content: center;
             align-items: center;
             overflow: scroll;
+            touch-action: none;
         }
 
         .green-box {
             width: 100px;
             height: 100px;
             background-color: green;
-            /*background-color: red;*/
         }
 
         .black-box {
@@ -32,43 +32,18 @@
             height: 100px;
             background-color: black;
         }
-
     </style>
 </head>
 <body>
 <script>
-    // document.addEventListener("dblclick", (event) => {
-    //     event.preventDefault();
-    // });
-
-    window.isPageZoomed = false;
-    let lastKnownWidth = window.innerWidth;
-
-    function checkZoomLevel() {
-        const currentWidth = window.innerWidth;
-
-        if (currentWidth !== lastKnownWidth) {
-            lastKnownWidth = currentWidth;
-            const zoomLevel = currentWidth / document.documentElement.clientWidth;
-
-            window.isPageZoomed = zoomLevel !== 1
-        }
-
-        requestAnimationFrame(checkZoomLevel);
-    }
-
-    // requestAnimationFrame(checkZoomLevel);
-
-    function resetZoom() {
-        var scale = 'scale(1)';
-        document.body.style.webkitTransform =  scale;    // Chrome, Opera, Safari
-        document.body.style.transform = scale;
-    }
+    document.addEventListener("dblclick", (event) => {
+        event.preventDefault();
+    });
 </script>
+
 <div class="container">
     <div class="green-box"></div>
     <div class="black-box"></div>
 </div>
-
 </body>
 </html>
