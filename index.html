@@ -7,9 +7,9 @@
     <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
     <title>Centered Green Div</title>
     <style>
-        * {
-            touch-action: pan-x pan-y
-        }
+        /** {*/
+        /*    touch-action: pan-x pan-y*/
+        /*}*/
 
         body {
             margin: 0;
@@ -24,8 +24,8 @@
         .green-box {
             width: 100px;
             height: 100px;
-            /*background-color: green;*/
-            background-color: red;
+            background-color: green;
+            /*background-color: red;*/
         }
     </style>
 </head>
@@ -34,6 +34,17 @@
     document.addEventListener("dblclick", (event) => {
         event.preventDefault();
     });
+
+    document.addEventListener('touchstart', (event) => {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    }, false);
+
+    // document.addEventListener("gesturechange", (event) => {
+    //     event.preventDefault()
+    // })
+
 </script>
 <div class="green-box"></div>
 </body>
