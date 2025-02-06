@@ -28,6 +28,13 @@
             background-color: green;
             /*background-color: red;*/
         }
+
+        .black-box {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+
     </style>
 </head>
 <body>
@@ -53,7 +60,14 @@
     }
 
     requestAnimationFrame(checkZoomLevel);
+
+    function resetZoom() {
+        var scale = 'scale(1)';
+        document.body.style.webkitTransform =  scale;    // Chrome, Opera, Safari
+        document.body.style.transform = scale;
+    }
 </script>
 <div class="green-box" onclick="alert(window.isPageZoomed)"></div>
+<div class="black-box" onclick="resetZoom()"></div>
 </body>
 </html>
